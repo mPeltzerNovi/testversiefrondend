@@ -50,6 +50,7 @@ function App() {
                         <Durbuy />
                     </Route>
                     <Route path="/London">
+                        {/* het staat er boven, dat is prima, classname geven en dat stylen*/}
                         <London />
                     </Route>
                     <Route path="/Garmisch">

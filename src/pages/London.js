@@ -2,12 +2,14 @@ import React from "react";
 
 import Location from "../Location"
 import BookingApplicationForm from "../BookingApplicationForm";
+import Sidebar from "../Sidebar";
 
 function London() {
 
 
     return (
         <div className='feed'>
+            <Sidebar />
             <Location
                 locationName="London"
                 description="London is the place to be om te shoppen maar ook zijn er ontelbaar veel leuke dingen te doen!

@@ -124,37 +124,33 @@ function Header() {
 
     return (
         <>
-            <h3>Test</h3>
-            {createUserSucces === true}
-            <form className="avatarButton" onSubmit={onSubmit}>
-                <label htmlFor="avatarImage-field">
-                    Upload hier je avatar
-                    <input
-                        type="file"
-                        id="avatarImage-field"
 
-                        onChange={(e) => setAvatarImage(e.target.files[0])}
-                    />
-                </label>
-
-                <button
-                    type="submit"
-                    className="avatar-button"
-                    disabled={loading}
-                >
-                    {loading ? 'Loading...' : 'Upload een foto'}
-                </button>
-                {error && <p>{error}</p>}
-            </form>
 
 
             <header>
                 <div className="header_left">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/8/8c/Facebook_Home_logo_old.svg" alt=""/>
-                    <div className="header_input">
-                        <SearchIcon />
-                        <input placeholder="Upload hiernaast je foto" type="text"/>
-                    </div>
+                    {/*<img src="https://upload.wikimedia.org/wikipedia/en/8/8c/Facebook_Home_logo_old.svg" alt=""/>*/}
+                    {createUserSucces === true}
+                    <form className="avatarButton" onSubmit={onSubmit}>
+                        {error && <p>{error}</p>}
+                        <label htmlFor="avatarImage-field">
+                            Upload hier je avatar
+                            <input
+                                type="file"
+                                id="avatarImage-field"
+
+                                onChange={(e) => setAvatarImage(e.target.files[0])}
+                            />
+                        </label>
+                        <button
+                            type="submit"
+                            className="avatar-button"
+                            disabled={loading}
+                        >
+                            {loading ? 'Loading...' : 'Versturen'}
+                        </button>
+                        {error && <p>{error}</p>}
+                    </form>
                 </div>
 
 
