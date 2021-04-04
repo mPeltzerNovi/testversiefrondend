@@ -195,18 +195,19 @@ function Header() {
                                     type="button"
                                     onClick={() => logout()}
                                 >
-                                    Log uit
+                                    Inloggen/Uitloggen
                                 </button>
                             </div>
                         </>
 
                     ) : (
                         <>
+                            {/*Oplossen door enr een loguitknop bij te maken*/}
                             <button
                                 type="button"
                                 onClick={() => history.push('/signin')}
                             >
-                                Log in
+                                Inloggen/Uitloggen
                             </button>
                             <button
                                 type="button"
@@ -214,6 +215,7 @@ function Header() {
                             >
                                 Registreren
                             </button>
+
 
                         </>
                     )}
