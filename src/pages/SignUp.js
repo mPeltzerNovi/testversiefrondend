@@ -1,41 +1,51 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-
+import axios from "axios";
 
 function SignUp() {
-    // state voor invoervelden (omdat het formulier met Controlled Components werkt!)
+
+
+
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     // state voor gebruikers-feedback
-    const [createUserSuccess, setCreateUserSuccess] = useState(false);
+    const [createUserSuccess, setCreateUserSucces] = useState(false);
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState('');
 
     async function onSubmit(event) {
         toggleLoading(true);
         setError('');
-        // Als je react-hook-form gebruikt hoeft dit niet, dat gebeurt dan automatisch
+        //Dit alleen omdat we controlled components gebruiken, React-hook-form hoeft dit niet
         event.preventDefault();
 
+        console.log(email, username, password);
+
         try {
-            // 1. Gebruik de data uit het formulier om een gebruiker aan te maken (check documentatie!)
-            const response = await axios.post('https://polar-lake-14365.herokuapp.com/api/auth/signup', {
+            //1. Gebruik de data uit het formulier om een gebruiker aan te maken (check documentatie)
+
+            //const response = await axios.post('https://polar-lake-14365.herokuapp/api/auth/signup', {
+            const response = await axios.post(`http://localhost:8080/api/auth/signup`, {
+
                 username: username,
                 email: email,
                 password: password,
                 role: ["user"],
+                //"admin" toevoegversie om stap 8 de lijst opvragen te tesen
+                //role: ["admin", "mod", "user"],
             });
-            // 2. Kijk goed wat je terugkrijgt!
-            console.log(response.data);
+
+            //2. Kijk goed wat je terugkrijgt
+            console.log(response);
+
 
             if (response.status === 200) {
-                // 3. Als het is gelukt, willen we in DIT component (SignUp) opslaan dat het gelukt is
-                setCreateUserSuccess(true);
+                //3. Als het gelukt is, willen we DIT  component opslaan dat het gelukt is
+                setCreateUserSucces(true);
             }
-        } catch(e) {
+        }catch (e) {
             console.error(e);
             if (e.message.includes('400')) {
                 setError('Er bestaat al een account met deze gebruikersnaam');
@@ -43,18 +53,23 @@ function SignUp() {
                 setError('Er is iets misgegaan bij het verzenden. Probeer het opnieuw');
             }
         }
+        //Als het try-catch blok hier klaar is dan zetten we toggleLoading weer op false
         toggleLoading(false);
+
     }
+
+    // 1. Implementeer loading en error in beide formulieren
+    // 2. Zorg ervoor dat de knoppen disabled zijn tijdens het laden en zorg ervoor dat de gebruiker dat ziet
+    // 3. Zorg ervoor dat als er  iets misgaat dit ook met de gebruiker wordt gecommuniceerd!
 
     return (
         <>
             <h1>Registreren</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
-            {/*4. Als het gelukt is, willen we een berichtje laten zien in de HTML, zoals:*/}
             {createUserSuccess === true && (
-                <h2 className="message-success">Het is gelukt! 🥳 Klik <Link to="/signin">hier</Link> om je in te loggen</h2>
+                <h2 className="message-success">Het is gelukt! Klik <Link to="/signin">hier</Link> om je in te loggen </h2>
             )}
-            <form onSubmit={onSubmit}>
+            <form className="login" onSubmit={onSubmit}>
                 <label htmlFor="email-field">
                     Email:
                     <input
@@ -83,7 +98,6 @@ function SignUp() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}/>
                 </label>
-                {/*Zorg dat de gebruiker niet nog een keer kan klikken terwijl we een request maken*/}
                 <button
                     type="submit"
                     className="form-button"

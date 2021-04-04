@@ -1,10 +1,105 @@
-header {
-  background-color: dodgerblue;
-  color: white;
-  padding: 20px;
+
+.app {
+  background-color: #eff2f5;
+  height: 100vh;
+}
+{/*Hierboven werkt waarschijnlijk niet maar dat is geen probleem*/}
+
+.app_body {
+  display: flex;
+}
+
+
+
+.header_left {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header_input {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  background-color: lightgray;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 999px;
+}
+
+.header_left > img {
+  height: 40px;
+}
+
+.header_input > input {
+  border: none;
+  background-color: transparent;
+  outline-width: 0;
+}
+
+.header_center {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.header_option > .MuiSvgIcon-root {
+  color: gray;
+}
+
+.header_option:hover > .MuiSvgIcon-root {
+  color: #2e81f4;
+}
+
+.header_option {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  cursor: pointer;
+}
+
+.header_option:hover {
+  background-color: #eff2f5;
+  border-radius: 10px;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: none;
+}
+
+.header_info {
+  display: flex;
+  align-items: center;
+}
+
+.header_info > h4 {
+  margin-left: 10px;
+  color: black;
+}
+
+.header_right {
+  display: flex;
+}
+
+.header_option--active > .MuiSvgIcon-root {
+  color: #2e81f4;
+}
+
+.header_option--active  {
+  border-bottom: 4px solid #2e81f4;
+}
+
+
+header {
+  background-color: whitesmoke;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
+
+  position: sticky;
+  z-index: 100;
+  top: 0;
+
 }
 
 button {
@@ -20,7 +115,7 @@ button + button {
   margin-left: 8px;
 }
 
-form {
+form.login {
   display: flex;
   flex-direction: column;
   background-color: #ededed;
@@ -29,12 +124,12 @@ form {
   border-radius: 4px;
 }
 
-form label {
+form.login label {
   margin: 4px 0;
   font-weight: bold;
 }
 
-form input {
+form.login input {
   width: 100%;
   padding: 4px 8px;
   margin: 6px 0;
@@ -50,6 +145,12 @@ h2 {
 
 button.form-button {
   width: 100%;
+}
+
+.loading-icon {
+  width: 16px;
+  height: 16px;
+  animation: rotating 1.5s linear infinite;
 }
 
 @keyframes rotating {

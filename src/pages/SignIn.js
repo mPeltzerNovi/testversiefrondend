@@ -1,55 +1,59 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
-import { AuthContext, useAuthState } from '../context/AuthContext';
+import axios from "axios";
+import {AuthContext, useAuthState} from "../context/AuthContext";
+import * as http from "http";
 
+//const endpointlink = `https://polar-lake-14365.herokuapp.com/api/auth/signin`;
+const endpointlink = `http://localhost8080/api/auth/signin`;
 
 function SignIn() {
-    // context-functies
+    //context-functie
     const { login } = useContext(AuthContext);
     const { isAuthenticated } = useAuthState();
 
-    // state voor invoervelden (omdat het formulier met Controlled Components werkt!)
+    //state voor invoervelden (omdat het formulier met controlled components werkt!)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    // state voor gebruikersfeedback
+
+    //state voor gebruikersfeedback
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState('');
 
-    // react-router dingen
+    //react-router dingen
     const history = useHistory();
 
-    // Deze functie wordt elke keer afgevuurd als isAuthenticated (uit context) veranderd
     useEffect(() => {
-        // als hij de waarde true heeft, DAN sturen we de gebruiker door!
         if (isAuthenticated === true) {
             history.push('/profile');
         }
     }, [isAuthenticated]);
 
+
+
     async function onSubmit(event) {
         toggleLoading(true);
         setError('');
-        // Als je react-hook-form gebruikt hoeft dit niet, dat gebeurt dan automatisch
+        //Deze hoeft alleen als je controlled components gebruikt
         event.preventDefault();
 
         try {
-            const response = await axios.post('https://polar-lake-14365.herokuapp.com/api/auth/signin', {
+            //const response = await axios.post('https://polar-lake-14365.herokuapp.com/api/auth/signup', {  "signin"???
+            const response = await axios.post(`http://localhost:8080/api/auth/signin`, {
                 username: username,
                 password: password,
             })
 
-            // We roepen hier de context-functie "login" aan. De context gaat dan met de data die we hebben
-            // teruggekregen alles op de juiste manier in localstorage en state zetten!
+            //handel het "inloggen" aan de voorkant af in de contect met de data die we binnen hebben gekregen!
             login(response.data);
-        } catch(e) {
-            // Gaat het mis? Log het in de console!
-            console.error(e);
+        } catch (e) {
+            console.log(e);
             setError('Inloggen is mislukt');
-            // Tip: als de gebruikersnaam niet bestaat of wachtwoord is verkeerd, stuurt de backend een 401!
+            // Tip: als de gebruikersnaam niet bestaat of wachtwoord is verkeerd, stuurt de backend een 401
         }
         toggleLoading(false);
+
     }
 
     return (
@@ -57,7 +61,7 @@ function SignIn() {
             <h1>Inloggen</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
 
-            <form onSubmit={onSubmit}>
+            <form className="login" onSubmit={onSubmit}>
                 <label htmlFor="username-field">
                     Gebruikersnaam:
                     <input
@@ -76,6 +80,9 @@ function SignIn() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)} />
                 </label>
+
+
+
                 <button
                     type="submit"
                     className="form-button"
