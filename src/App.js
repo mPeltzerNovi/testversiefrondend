@@ -21,7 +21,7 @@ function App() {
     return (
         <>
             <Header />
-            <Sidebar />
+
             <div className="content">
                 <Switch>
                     <Route exact path="/">
@@ -31,7 +31,7 @@ function App() {
                     <Route path="/profile">
                         <div className="app_body">
                             <Sidebar />    {/*Hier moet je de components voor importeren beveiligde deel, is ook kwestie van uitzetten straks*/}
-                            <Feed />
+                            <Feed />        {/*zoals dit maken om de sidebar op elke page huisjes te krijgen*/}
 
                         </div>
                         {/*waarschijnlijk leer ik later hoe je deze hieronder weer onder de volgende components zet.*/}
@@ -69,5 +69,4 @@ function App() {
 }
 
 export default App;
-
 
