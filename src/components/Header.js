@@ -156,24 +156,7 @@ function Header() {
 
 
                 <div className="header_center">
-                    <div className="header_option header_option--active">
-                        <HomeIcon fontSize="large" />
-                    </div>
-                    <div className="header_option">
-                        <DirectionsBike fontSize="large" />
-                    </div>
-                    <div className="header_option">
-                        <LocationCity fontSize="large" />
-                    </div>
-                    <div className="header_option">
-                        <FilterHdr fontSize="large" />
-                    </div>
-                    <div className="header_option">
-                        <LocalDining fontSize="large" />
-                    </div>
-                    <div className="header_option">
-                        <DirectionsWalk fontSize="large" />
-                    </div>
+
                 </div>
 
                 <div className="header-right">

@@ -39,7 +39,8 @@ function SignIn() {
         event.preventDefault();
 
         try {
-            //const response = await axios.post('https://polar-lake-14365.herokuapp.com/api/auth/signup', {  "signin"???
+            //Gebruik de polar-lake om zonder de database op de api van nick in te loggen!
+            //const response = await axios.post('https://polar-lake-14365.herokuapp.com/api/auth/signin', {
             const response = await axios.post(`http://localhost:8080/api/auth/signin`, {
                 username: username,
                 password: password,

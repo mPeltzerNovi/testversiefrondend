@@ -150,27 +150,17 @@ function Profile() {
 
 
 
+                <h1>Hieronder volgt de lijst van gebruikers!!!</h1>
 
-                <h1>Profielpagina</h1>
-                <h2>Gegevens</h2>
-                { user && (
-                    <>
-                        <p><strong>Gebruikersnaam:</strong> {user.username}</p>
-                        <p><strong>Email:</strong> {user.email}</p>
-                        {/*<p><strong>All</strong> {admin.all}</p>*/}
-                    </>
-                )}
-
-                <h2>Afgeschermde content voor ingelogde gebruikers</h2>
-
-                // [1, 2, 3].map(item => {})
                 {protectedUserList.map((user) => {
                     return (
                         <p>{user.username}</p>
                     )
                 })}
 
-                //In de return:
+
+                ---------------------------------------------------------Overige info hieronder:
+
                 {protectedBookingList.map((booking) => {
                     return (
                         <p>{booking.comment}</p>
@@ -181,11 +171,23 @@ function Profile() {
 
 
 
-                //standaard teruggaves
+
                 {protectedData && <p>{protectedData}</p>}
                 {protectedAdminData && <p>{protectedAdminData}</p>}
                 {error && <p className="message-error">{error}</p>}
                 <p>Terug naar de <Link to="/">Homepagina</Link></p>
+
+                    <h1>Profielpagina</h1>
+                <h2>Gegevens</h2>
+                { user && (
+                    <>
+                        <p><strong>Gebruikersnaam:</strong> {user.username}</p>
+                        <p><strong>Email:</strong> {user.email}</p>
+                        {/*<p><strong>All</strong> {admin.all}</p>*/}
+                    </>
+                )}
+
+                <h2>Afgeschermde content voor ingelogde gebruikers</h2>
 
             </div>
 

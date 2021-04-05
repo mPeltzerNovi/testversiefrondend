@@ -1,10 +1,12 @@
 import Location from "../Location";
 import BookingApplicationForm from "../BookingApplicationForm";
+import Sidebar from "../Sidebar";
 
 function Deauville() {
 
     return(
         <div className='feed'>
+            <Sidebar />
             <Location
                 locationName="Deauville"
                 description="In Deauville ben je lekker even helemaal weg. Of je nu door het oude centrum banjert of door

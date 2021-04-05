@@ -1,29 +1,46 @@
 import React from 'react';
 import "./Sidebar.css";
 import SidebarRow from "./SidebarRow";
-import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
-import EmojiFlagsIcon from "@material-ui/icons/EmojiFlags";
-import PeopleIcon from "@material-ui/icons/People";
-import ChatIcon from "@material-ui/icons/Chat";
-import StorefrontIcon from "@material-ui/icons/Storefront";
-import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
-import { ExpandMoreOutlined } from "@material-ui/icons";
+import HomeIcon from "@material-ui/icons/Home";
+import {DirectionsWalk} from "@material-ui/icons";
+import {DirectionsBike} from "@material-ui/icons";
+import {LocationCity} from "@material-ui/icons";
+import {FilterHdr} from "@material-ui/icons";
+import {LocalDining} from "@material-ui/icons";
 
-
+import { useHistory } from 'react-router-dom';
 
 function Sidebar() {
+
+    const history = useHistory();
+
     return (
         <div className="sidebar">
-            {/*<SidebarRow src={gebruiker.photoURL} title={gebruiker.displayName} />*/}
-            <SidebarRow src='https://upload.wikimedia.org/wikipedia/commons/9/93/Mariah_Carey_WBLS_2018_Interview_2.jpg'
-                        title='John Jansen' />
-            <SidebarRow Icon={LocalHospitalIcon} title="COVID-19 Information Center" />
-            <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
-            <SidebarRow Icon={PeopleIcon} title="Friends" />
-            <SidebarRow Icon={ChatIcon} title="Marketplace" />
-            <SidebarRow Icon={StorefrontIcon} title="Marketplace" />
-            <SidebarRow Icon={VideoLibraryIcon} title="Videos" />
-            <SidebarRow Icon={ExpandMoreOutlined} title="Marketplace" />
+            {/* Hier de knoppen omheen straks, die button kan je stylen*/}
+            <button type="sidebar_button" onClick={() => history.push('/profile')}>
+                <SidebarRow Icon={HomeIcon} title="Home" />
+            </button>
+
+            <button type="sidebar_button" onClick={() => history.push('/Durbuy')}>
+                <SidebarRow Icon={DirectionsBike} title="Durbuy" />
+            </button>
+
+            <button type="sidebar_button" onClick={() => history.push('/London')}>
+                <SidebarRow Icon={LocationCity} title="London" />
+            </button>
+
+            <button type="sidebar_button" onClick={() => history.push('/Garmisch')}>
+                <SidebarRow Icon={FilterHdr} title="Garmisch" />
+            </button>
+
+            <button type="sidebar_button" onClick={() => history.push('/Deauville')}>
+                <SidebarRow Icon={LocalDining} title="Deauville" />
+            </button>
+
+            <button type="sidebar_button" onClick={() => history.push('/Hattem')}>
+                <SidebarRow Icon={DirectionsWalk} title="Hattem" />
+            </button>
+
         </div>
     );
 

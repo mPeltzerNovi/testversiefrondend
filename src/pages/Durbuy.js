@@ -3,6 +3,7 @@ import React from "react";
 
 import Location from "../Location";
 import BookingApplicationForm from "../BookingApplicationForm";
+import Sidebar from "../Sidebar";
 
 function Durbuy(){
 
@@ -12,6 +13,7 @@ function Durbuy(){
 
     return (
         <div className='feed'>
+            <Sidebar />
             <Location
                 locationName="Durbuy"
                 description="Boek nu dit leuke huisje in de bossen van Durbuy! Heerlijk voor een weekendje weg in de Ardennen.

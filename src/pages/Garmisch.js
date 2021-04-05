@@ -2,12 +2,14 @@ import React from "react";
 
 import Location from "../Location";
 import BookingApplicationForm from "../BookingApplicationForm";
+import Sidebar from "../Sidebar";
 
 function Garmisch(){
 
 
     return (
         <div className='feed'>
+            <Sidebar />
             <Location
                 locationName="Garmisch"
                 description="Hier kan je fantastisch skien en het is niet ver weg! Dit leuke stadje in Zuid-Duitslang is

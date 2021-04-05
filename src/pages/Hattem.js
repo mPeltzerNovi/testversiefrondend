@@ -2,11 +2,13 @@ import React from "react";
 
 import Location from "../Location";
 import BookingApplicationForm from "../BookingApplicationForm";
+import Sidebar from "../Sidebar";
 
 function Hattem() {
 
     return (
         <div className='feed'>
+            <Sidebar />
             <Location
                 locationName="Hattem"
                 description="Hattem is super leuk en altijd dichtbij! Je kunt er heerlijk over de Veluwe dwalen of lekker

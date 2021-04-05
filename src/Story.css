@@ -9,12 +9,10 @@
     border-radius: 10px;
     margin-right: 10px;
     transition: transform 100ms ease-in;
-    cursor: pointer;
+
 }
 
-.story:hover {
-    transform: scale(1.07);
-}
+
 
 .story_avatar {
     margin: 10px;
