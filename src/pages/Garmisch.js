@@ -1,14 +1,33 @@
-import React from "react";
+//import React from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import Location from "../Location";
 import BookingApplicationForm from "../BookingApplicationForm";
 import Sidebar from "../Sidebar";
 
-function Garmisch(){
+const apiKey ='620c29ea8666e616e5cd46cb0d2acdf4';
 
+function Garmisch(){
+    const [weatherDataGarmischTemp, setWeatherDataGarmischTemp] = useState([]);
+
+    //Garmisch temp
+    useEffect(() =>{
+        async function getLocationsGarmischTemp(){
+            try {
+                const {data: {main}} =await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=garmisch-partenkirchen,de&appid=${apiKey}&lang=nl`);
+                setWeatherDataGarmischTemp(main);
+                console.log("hierzo Garmisch", main);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        getLocationsGarmischTemp();
+    },[]);
 
     return (
         <div className='feed'>
+            <p><strong>Actuele luchtdruk ter plaatse:</strong> {weatherDataGarmischTemp.pressure} Pa</p>
             <Sidebar />
             <Location
                 locationName="Garmisch"

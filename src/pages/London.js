@@ -1,14 +1,35 @@
-import React from "react";
+//import React from "react";
+
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import Location from "../Location"
 import BookingApplicationForm from "../BookingApplicationForm";
 import Sidebar from "../Sidebar";
 
-function London() {
+const apiKey ='620c29ea8666e616e5cd46cb0d2acdf4';
 
+function London() {
+    const [weatherDataLondonTemp, setWeatherDataLondonTemp] = useState([]);
+
+    //London temp
+    useEffect(() => {
+        async function getLocationsLondonTemp() {
+            try {
+                const {data: {main}} = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=london,gb&appid=${apiKey}&lang=nl`);
+
+                setWeatherDataLondonTemp(main);
+                console.log("Hierzo London", main);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        getLocationsLondonTemp();
+    },[]);
 
     return (
         <div className='feed'>
+            <p><strong>Actuele luchtdruk ter plaatse:</strong> {weatherDataLondonTemp.pressure} Pa</p>
             <Sidebar />
             <Location
                 locationName="London"

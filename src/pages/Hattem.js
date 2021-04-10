@@ -1,13 +1,36 @@
-import React from "react";
+//import React from "react";
+
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import Location from "../Location";
 import BookingApplicationForm from "../BookingApplicationForm";
 import Sidebar from "../Sidebar";
 
+const apiKey ='620c29ea8666e616e5cd46cb0d2acdf4';
+
 function Hattem() {
+    const [weatherDataHattemTemp, setWeatherDataHattemTemp] = useState([]);
+
+    //Hattem temp
+    useEffect(() => {
+        async function getLocationsHattemTemp() {
+            try {
+                const {data: {main}} = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=hattem,nl&appid=${apiKey}&lang=nl`);
+                setWeatherDataHattemTemp(main);
+                console.log("hierzo Hattem", main);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        getLocationsHattemTemp();
+    },[]);
+
+
 
     return (
         <div className='feed'>
+            <p><strong>Actuele luchtdruk ter plaatse:</strong> {weatherDataHattemTemp.pressure} Pa</p>
             <Sidebar />
             <Location
                 locationName="Hattem"

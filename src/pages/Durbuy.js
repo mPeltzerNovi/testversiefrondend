@@ -16,25 +16,13 @@ function Durbuy(){
 
     //Ad3
     const [weatherDataDurbuyTemp, setWeatherDataDurbuyTemp] = useState([]);
-    const [weatherDataDurbuy, setWeatherDataDurbuy] = useState([]);
 
-    //Durbuy
-    useEffect(() => {
-        async function getLocationsDurbuy() {
-            try {
-                const {data: {weather}} = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=durbuy,be&appid=${apiKey}&lang=nl`);
 
-                setWeatherDataDurbuy(weather);
 
-                console.log(weather);
-            } catch (e) {
-                console.log(e);
-            }
-        }
 
-        getLocationsDurbuy();
 
-    }, []);
+
+
 
 
     //Ad4
@@ -57,13 +45,15 @@ function Durbuy(){
 
     }, []);
 
+    //Dat omrekenen moet je zo kunnen copy pasten!!!
 
 
 
 
     return (
         <div className='feed'>
-            <p><strong>Actuele temperatuur:</strong> {weatherDataDurbuyTemp.temp} F</p>
+            <p><strong>Actuele luchtdruk ter plaatse:</strong> {weatherDataDurbuyTemp.pressure} Pa</p>
+
             <Sidebar />
             <Location
                 locationName="Durbuy"
