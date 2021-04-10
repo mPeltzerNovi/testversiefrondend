@@ -14,6 +14,7 @@ import London from "./pages/London"; //geimporteerd door er op te klikken benede
 import Garmisch from "./pages/Garmisch";
 import Deauville from "./pages/Deauville";
 import Hattem from "./pages/Hattem";
+import StoryReel from "./StoryReel";
 //die import Redirect from 'react-router-dom' , daar ging het mis. moest je nog toevoegen
 
 function App() {
@@ -30,8 +31,9 @@ function App() {
                     {/*Als je geen specifieke private route maakt, kan je hem ook zo opslaan (zie react les8)*/}
                     <Route path="/profile">
                         <div className="app_body">
-                            <Sidebar />    {/*Hier moet je de components voor importeren beveiligde deel, is ook kwestie van uitzetten straks*/}
-                            <Feed />        {/*zoals dit maken om de sidebar op elke page huisjes te krijgen*/}
+                               {/*Hier stond de <sidebar /> voor ik heb in de feed onder de storyreel zette*/}
+                            <Feed />
+                            {/*zoals dit maken om de sidebar op elke page huisjes te krijgen*/}
 
                         </div>
                         {/*waarschijnlijk leer ik later hoe je deze hieronder weer onder de volgende components zet.*/}

@@ -5,6 +5,7 @@ import MessageSender from "./MessageSender";
 import Post from "./Post";
 
 import db from "./firebase";
+import Sidebar from "./Sidebar";
 
 function Feed() {
     //Hier haal je de boel eruit
@@ -22,6 +23,7 @@ function Feed() {
     return (
         <div className='feed'>
             <StoryReel />
+            <Sidebar />
             <MessageSender />
 
             {posts.map((post) => (
