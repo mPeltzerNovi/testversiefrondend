@@ -1,11 +1,61 @@
-import React from "react";
+//import React from "react";
+
+//Ad1
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 import Location from "../Location";
 import BookingApplicationForm from "../BookingApplicationForm";
 import Sidebar from "../Sidebar";
 
+//ad2
+const apiKey ='620c29ea8666e616e5cd46cb0d2acdf4';
+
 function Durbuy(){
+
+    //Ad3
+    const [weatherDataDurbuyTemp, setWeatherDataDurbuyTemp] = useState([]);
+    const [weatherDataDurbuy, setWeatherDataDurbuy] = useState([]);
+
+    //Durbuy
+    useEffect(() => {
+        async function getLocationsDurbuy() {
+            try {
+                const {data: {weather}} = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=durbuy,be&appid=${apiKey}&lang=nl`);
+
+                setWeatherDataDurbuy(weather);
+
+                console.log(weather);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        getLocationsDurbuy();
+
+    }, []);
+
+
+    //Ad4
+    //Durbuy temp
+    useEffect(() => {
+        async function getLocationsDurbuyTemp() {
+            try {
+                const {data: {main}} = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=durbuy,be&appid=${apiKey}&lang=nl`);
+
+                setWeatherDataDurbuyTemp(main);
+
+                console.log("hierzo", main);
+
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        getLocationsDurbuyTemp();
+
+    }, []);
 
 
 
@@ -13,6 +63,7 @@ function Durbuy(){
 
     return (
         <div className='feed'>
+            <p><strong>Actuele temperatuur:</strong> {weatherDataDurbuyTemp.temp} F</p>
             <Sidebar />
             <Location
                 locationName="Durbuy"

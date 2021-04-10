@@ -45,7 +45,8 @@ function Profile() {
                         Authorization: `Bearer ${token}`,
                     }
                 });
-                setProtectedBookingList(response.data);
+                console.log("booking", response);
+                setProtectedBookingList(JSON.parse(response.data));
             } catch (e) {
                 setError('Er is iets mis gegaan met het ophalen van de data')
             }
@@ -139,6 +140,7 @@ function Profile() {
         if (user.roles && user.roles.includes("ROLE_ADMIN")) getProtectedUserList();
     }, []);
 
+    console.log(protectedBookingList);
 
 
 
@@ -177,7 +179,7 @@ function Profile() {
                 {error && <p className="message-error">{error}</p>}
                 <p>Terug naar de <Link to="/">Homepagina</Link></p>
 
-                    <h1>Profielpagina</h1>
+                <h1>Profielpagina</h1>
                 <h2>Gegevens</h2>
                 { user && (
                     <>

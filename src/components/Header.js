@@ -43,6 +43,8 @@ function Header() {
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState('');
 
+    const [base64Avatar, setBase64Avatar] = useState('');
+
     //avatarImage omzetten in base64
     const uploadImage = async (e) => {
         const file = e.target.files[0];
@@ -68,6 +70,7 @@ function Header() {
         const token = localStorage.getItem('token');
 
         console.log("avatarImage", avatarImage);
+        setBase64Avatar(base64);
 
         try {
             const response = await axios.post(`http://localhost:8080/residences`, {
@@ -97,6 +100,19 @@ function Header() {
         }
         toggleLoading(false);
     }
+    console.log("hier het plaatje", base64Avatar);
+
+    useEffect(() =>{
+        const token = localStorage.getItem('token');
+        async function getAvatar() {
+            const response = await axios.get(`http://localhost:8080/residences`, { headers: {
+                    "Content-Type" : "application/json",
+                    Authorization: `Bearer ${token}`,
+                }})
+            console.log(response);
+        }
+        getAvatar()
+    }, [])
 
     const convertBase64 = (file) => {
         let reader = new FileReader();
@@ -172,7 +188,8 @@ function Header() {
                     {isAuthenticated ? (
                         <>
                             <div className="header_info">
-                                <Avatar />
+                                {base64Avatar? <img src={base64Avatar} />: <Avatar />}
+
                                 <h4>{user.username}</h4>
                                 <button
                                     type="button"
