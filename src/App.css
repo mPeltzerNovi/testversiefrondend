@@ -28,6 +28,10 @@
 .header_left > img {
   height: 40px;
 }
+{/*Hier die avatar image upload styling*/}
+.header_info > img {
+  height: 40px;
+}
 
 .header_input > input {
   border: none;

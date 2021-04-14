@@ -89,7 +89,7 @@ function SignIn() {
                     className="form-button"
                     disabled={loading}
                 >
-                    {loading ? 'Loading...' : 'Maak account aan'}
+                    {loading ? 'Loading...' : 'Versturen'}
                 </button>
                 {error && <p>{error}</p>}
             </form>

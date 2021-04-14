@@ -42,7 +42,7 @@ function MessageSender() {
     return (
         <div className='messageSender'>
             <div className="messageSender_top">
-                <Avatar />
+                {/*<Avatar />*/}
                 <form>
                     <input
                         value={input}
@@ -62,7 +62,7 @@ function MessageSender() {
             </div>
 
             <div className="messageSender_bottom">
-                Laat een leuk berichtje achter!!!
+                <p>Laat hier een leuk berichtje achter!</p>
 
 
             </div>

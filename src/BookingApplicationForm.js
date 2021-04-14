@@ -128,8 +128,10 @@ function BookingApplicationForm() {
         <>
             <h1>Bookingsverzoek</h1>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
-            {createUserSuccess === true}
+            <p>Geef de data waarop je het huisje wilt huren op en Judith laat je zsm weten of het kan!</p>
+            <p>{createUserSuccess === true && (<h2 className="message-success">Succes; Je bookingsverzoek is verstuurd</h2>)}</p>
+
+
             <form className="bookingbutton" onSubmit={onSubmit}>
 
                 <label htmlFor="arrival-field">
@@ -162,7 +164,7 @@ function BookingApplicationForm() {
                 </label>
 
                 <label htmlFor="base-image-field">
-                    Upload foto:
+                    Upload hier je paspoortfoto:
                     <input
                         type="file"
                         id="base-image-field"
@@ -174,14 +176,15 @@ function BookingApplicationForm() {
                     className="form-button"
                     disabled={loading}
                 >
-                    {loading ? 'Loading...' : 'Maak account aan'}
+                    {loading ? 'Bookingsverzoek ontvangen' : 'Versturen'}
                 </button>
                 {error && <p>{error}</p>}
 
                 <img src={baseImage} height="200px"/>
 
             </form>
-            <p>Heb je al een account? Je kunt je <Link to="/signin">hier</Link> inloggen.</p>
+            <p>Laat ook een berichtje achter op de profielpagina!</p>
+
         </>
     )
 };
