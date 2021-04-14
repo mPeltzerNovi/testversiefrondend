@@ -60,7 +60,7 @@ function SignIn() {
     return (
         <>
             <h1>Inloggen</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
+            <p>Log hier in om een huisje te boeken:</p>
 
             <form className="login" onSubmit={onSubmit}>
                 <label htmlFor="username-field">

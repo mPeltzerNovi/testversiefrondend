@@ -203,6 +203,7 @@ function Header() {
                     ) : (
                         <>
                             {/*Oplossen door enr een loguitknop bij te maken*/}
+
                             <button
                                 type="button"
                                 onClick={() => history.push('/signin')}

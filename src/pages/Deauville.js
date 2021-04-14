@@ -30,7 +30,7 @@ function Deauville() {
             <p><strong>Actuele luchtdruk ter plaatse:</strong> {weatherDataDeauvilleTemp.pressure} Pa</p>
             <Sidebar />
             <Location
-                locationName="Deauville"
+                locationName="Rue du Moulin Saint-Laurent 9: Deauville"
                 description="In Deauville ben je lekker even helemaal weg. Of je nu door het oude centrum banjert of door
                 de heuvels van Normandie rijdt. Je bent lekker aan de kust en de visschotels zijn er geweldig! Boek dit
                 leuke appartement (30M2) aan de rand van Deauville, inde buurt van de jachthaven voor maar 120 euro per

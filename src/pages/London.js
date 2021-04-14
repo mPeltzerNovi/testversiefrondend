@@ -32,7 +32,7 @@ function London() {
             <p><strong>Actuele luchtdruk ter plaatse:</strong> {weatherDataLondonTemp.pressure} Pa</p>
             <Sidebar />
             <Location
-                locationName="London"
+                locationName="Dowlas street 342: London"
                 description="London is the place to be om te shoppen maar ook zijn er ontelbaar veel leuke dingen te doen!
                 Het appartement is niet groot (20m2) en honden zijn er helaas niet toegestaan. Het is gelegen nabij
                 Greenwich Park en het metrostation aldaar. Je bent dus overal in London in een handomdraai! Ideaal voor een

@@ -65,7 +65,7 @@ function SignUp() {
     return (
         <>
             <h1>Registreren</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
+            <p>Maak hier een account aan om een huisje te boeken:</p>
             {createUserSuccess === true && (
                 <h2 className="message-success">Het is gelukt! Klik <Link to="/signin">hier</Link> om je in te loggen </h2>
             )}

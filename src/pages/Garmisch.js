@@ -30,7 +30,7 @@ function Garmisch(){
             <p><strong>Actuele luchtdruk ter plaatse:</strong> {weatherDataGarmischTemp.pressure} Pa</p>
             <Sidebar />
             <Location
-                locationName="Garmisch"
+                locationName="Riffelstrasse 18: Garmisch"
                 description="Hier kan je fantastisch skien en het is niet ver weg! Dit leuke stadje in Zuid-Duitslang is
                 ontzettend Chill. Niet alleen in de winter maar ook in de Zomer. Lekker wandelen in de bergen of een
                 dagtochtje naar het waanzinnige Munchen. Het appartement is gelegen op 800 meter van de gondel en honden zijn

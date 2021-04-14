@@ -56,7 +56,7 @@ function Durbuy(){
 
             <Sidebar />
             <Location
-                locationName="Durbuy"
+                locationName="Rue du Manoir 34: Durbuy"
                 description="Boek nu dit leuke huisje in de bossen van Durbuy! Heerlijk voor een weekendje weg in de Ardennen.
                 Je kan er heerlijk mountainbiken, wandelen, raften en in de winter langlaufen. Wil je hierheen? Scroll dan snel
                 naar beneden en doe een boekingsverzoek met de datum die je in gedachten hebt. Dan laat ik je binnen 24 uur

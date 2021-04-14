@@ -33,7 +33,7 @@ function Hattem() {
             <p><strong>Actuele luchtdruk ter plaatse:</strong> {weatherDataHattemTemp.pressure} Pa</p>
             <Sidebar />
             <Location
-                locationName="Hattem"
+                locationName="Vierakker 38: Hattem"
                 description="Hattem is super leuk en altijd dichtbij! Je kunt er heerlijk over de Veluwe dwalen of lekker
                 een terrasje pakken in het historische centrum. Het huisje is in de bossen gelegen en in de buurt van de
                 uitvalswegen. Het oppervlak is 20M2, honden zijn toegestaan en de prijs is 110 euro per nacht.
