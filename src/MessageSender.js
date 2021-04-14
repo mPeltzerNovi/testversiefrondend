@@ -62,7 +62,7 @@ function MessageSender() {
             </div>
 
             <div className="messageSender_bottom">
-                <p>Laat hier een leuk berichtje achter!</p>
+                <p>Doe mee aan de fotowedstrijd (ik verloot elke maand een weekendje weg) of laat gewoon een leuk berichtje achter!</p>
 
 
             </div>
