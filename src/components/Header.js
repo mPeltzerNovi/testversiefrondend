@@ -1,41 +1,20 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 import {AuthContext, useAuthState} from "../context/AuthContext";
 import axios from "axios";
-
-import SearchIcon from "@material-ui/icons/Search";
-import HomeIcon from "@material-ui/icons/Home";
-import {DirectionsWalk} from "@material-ui/icons";
-import {DirectionsBike} from "@material-ui/icons";
-import {LocationCity} from "@material-ui/icons";
-import {FilterHdr} from "@material-ui/icons";
-import {LocalDining} from "@material-ui/icons";
-
-
-import SubscriptionsOutlinedIcon from "@material-ui/icons/SubscriptionsOutlined";
-import StorefrontOutlinedIcon from "@material-ui/icons/StorefrontOutlined";
-import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 import { Avatar } from "@material-ui/core";
-
-
-
 
 
 function Header() {
     const history = useHistory();
-    const { user } = useAuthState(); //Nice; dit in combi met {user.username} op R74 geeft username in de header
-
-    //context dingen
+    const { user } = useAuthState();
 
     const { isAuthenticated } = useAuthState();
     const { logout } = useContext(AuthContext);
 
-    //Aanvullingen voor het uploaden van een profielfoto
-    //--------------------------------------------------------
-    const [firstName, setFirstName] = useState("");
+    const [futureOne, setFutureOne] = useState("");
     const [lastName, setLastName] = useState("");
-    const [clientText, setClientText] = useState("");
+    const [futureTwo, setFutureTwo] = useState("");
     const [avatarImage, setAvatarImage] = useState("");
 
     //state voor gebruikers-feedback
@@ -52,7 +31,6 @@ function Header() {
         setAvatarImage(base64);
     }
 
-    //Zoiets moet ik dan ook maken voor terug renderen.
     async function onSubmit(event) {
         toggleLoading(true);
         setError('');
@@ -64,7 +42,7 @@ function Header() {
 
         console.log("base 64", base64);
 
-        console.log(firstName, lastName, clientText, avatarImage);
+        console.log(futureOne, lastName, futureTwo, avatarImage);
 
 
         const token = localStorage.getItem('token');
@@ -73,11 +51,10 @@ function Header() {
         setBase64Avatar(base64);
 
         try {
-            //Nog een keer veranderd naar "avatars (zie onder)".
             const response = await axios.post(`http://localhost:8080/avatars`, {
-                firstName: firstName,
+                futureOne: futureOne,
                 lastName: lastName,
-                clientText: clientText,
+                futureTwo: futureTwo,
                 avatarImage: base64,
             }, {
                 headers: {
@@ -130,16 +107,6 @@ function Header() {
         });
     };
 
-
-
-    //useEffect(() => {
-    //  if (isAuthenticated === false) {
-    //    history.push('/signin');
-    //  }
-    //}, [isAuthenticated]);
-
-    //Het zat in de label-->id
-
     return (
         <>
 
@@ -147,7 +114,6 @@ function Header() {
 
             <header>
                 <div className="header_left">
-                    {/*<img src="https://upload.wikimedia.org/wikipedia/en/8/8c/Facebook_Home_logo_old.svg" alt=""/>*/}
                     {createUserSucces === true}
                     <form className="avatarButton" onSubmit={onSubmit}>
                         {error && <p>{error}</p>}
@@ -171,22 +137,11 @@ function Header() {
                     </form>
                 </div>
 
-
-
                 <div className="header_center">
-
+                    {/*Voor latere functie-uitbreidingen */}
                 </div>
 
                 <div className="header-right">
-
-
-
-
-                    {/*<Button>
-                        Hallo daar!
-                    </Button>*/}
-
-
                     {isAuthenticated ? (
                         <>
                             <div className="header_info">
@@ -204,8 +159,6 @@ function Header() {
 
                     ) : (
                         <>
-                            {/*Oplossen door enr een loguitknop bij te maken*/}
-
                             <button
                                 type="button"
                                 onClick={() => history.push('/signin')}
@@ -218,14 +171,9 @@ function Header() {
                             >
                                 Registreren
                             </button>
-
-
                         </>
                     )}
                 </div>
-
-
-
             </header>
         </>
     );

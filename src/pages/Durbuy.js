@@ -1,33 +1,15 @@
-//import React from "react";
-
-//Ad1
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-
 import Location from "../components/Location";
 import BookingApplicationForm from "../components/BookingApplicationForm";
-
 import Sidebar from "../components/Sidebar";
 
-//ad2
 const apiKey ='620c29ea8666e616e5cd46cb0d2acdf4';
 
-function Durbuy(){
+function Durbuy() {
 
-    //Ad3
     const [weatherDataDurbuyTemp, setWeatherDataDurbuyTemp] = useState([]);
 
-
-
-
-
-
-
-
-
-    //Ad4
-    //Durbuy temp
     useEffect(() => {
         async function getLocationsDurbuyTemp() {
             try {
@@ -46,11 +28,6 @@ function Durbuy(){
 
     }, []);
 
-    //Dat omrekenen moet je zo kunnen copy pasten!!!
-
-
-
-
     return (
         <div className='feed'>
             <p><strong>Actuele luchtdruk ter plaatse:</strong> {weatherDataDurbuyTemp.pressure} Pa</p>
@@ -66,12 +43,9 @@ function Durbuy(){
                 image2="https://www.inrichting-huis.com/wp-content/afbeeldingen/la-micheline-stoer-architectonisch-vakantiehuis-ardennen.jpg"
                 image3="https://cdn.thecrazytourist.com/wp-content/uploads/2020/02/ccimage-shutterstock_1408571276.jpg"
             />
-            {/*Component boekingsverzoek maken en hier plaatsen*/}
             <BookingApplicationForm />
-
-
         </div>
-    )
+    );
 }
 
 export default Durbuy;

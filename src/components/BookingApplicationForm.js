@@ -1,22 +1,15 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import "./BookingApplicationForm.css";
-import {AuthContext, useAuthState} from "../context/AuthContext";
-import { Link, useHistory } from 'react-router-dom';
-
-
 import axios from "axios";
-
-
 
 function BookingApplicationForm() {
 
-    //Toevoeging 1
-    //const { isAuthenticated } = useState();
+
 
     const [arrival, setArrival] = useState("");
     const [departure, setDeparture] = useState("");
     const [comment, setComment] = useState("");
-    //Ad1 voor baseImage (26feb 21)
+    //Voor baseImage
     const [baseImage, setBaseImage] = useState("");
 
     //state voor gebruikers-feedback
@@ -24,32 +17,12 @@ function BookingApplicationForm() {
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState('');
 
-    //Ad2 voor baseImage:
+    //Voor baseImage :
     const uploadImage = async (e) => {
         const file = e.target.files[0];
         const base64 = await convertBase64(file);
         setBaseImage(base64);
     };
-
-    /*const convertBase64 = (file) => {
-
-        return new Promise((resolve, reject) => {
-
-            const fileReader = new FileReader();
-            fileReader.readAsDataURL(file);
-
-            fileReader.onload = (() => {
-                resolve(fileReader.result);
-            });
-
-            fileReader.onerror = ((error) => {
-                reject(error);
-            });
-        });
-    };*/
-
-    //einde input voor image 26feb 21
-
 
     async function onSubmit(event) {
         toggleLoading(true);
@@ -64,14 +37,12 @@ function BookingApplicationForm() {
 
         console.log(arrival, departure, comment, baseImage);
 
-        //Dit is nieuw 1:
         const token = localStorage.getItem('token');
 
         console.log("baseimage", baseImage);
 
         try {
             const response = await axios.post(`http://localhost:8080/bookings`, {
-                //Dit is nieuw 2:
                 arrival: arrival,
                 departure: departure,
                 comment: comment,
@@ -112,17 +83,6 @@ function BookingApplicationForm() {
             };
         });
     };
-
-    /*const handleSubmit = e => {
-        e.preventDefault();
-
-        //More clever database stuff
-
-        setStartDate("");
-        setEndDate("");
-        setComment("");
-    }*/
-
 
     return (
         <>

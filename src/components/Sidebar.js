@@ -16,7 +16,6 @@ function Sidebar() {
 
     return (
         <div className="sidebar">
-            {/* Hier de knoppen omheen straks, die button kan je stylen*/}
             <button type="sidebar_button" onClick={() => history.push('/profile')}>
                 <SidebarRow Icon={HomeIcon} title="Home" />
             </button>

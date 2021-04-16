@@ -1,10 +1,6 @@
 import React, {useState} from 'react';
 import "./MessageSender.css";
-import {Avatar} from "@material-ui/core";
 
-
-
-//posten in firebase mogelijk maken
 import db from "../firebase";
 import firebase from "firebase";
 
@@ -18,31 +14,22 @@ function MessageSender() {
     const handleSubmit = e => {
         e.preventDefault();
 
-        //code toevoegen voor posten
+        //code voor het posten in firebase
         db.collection('posts').add({
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             profilePic: null,
             username: null,
             image: imageUrl,
-            //deze info komt uit google account bij hem
-            //profilePic: user.photoURL,
-            //username: user.displayName,
-
         })
 
         setInput("");
         setImageUrl("");
-
-
     };
-
-
 
     return (
         <div className='messageSender'>
             <div className="messageSender_top">
-                {/*<Avatar />*/}
                 <form>
                     <input
                         value={input}
@@ -63,12 +50,8 @@ function MessageSender() {
 
             <div className="messageSender_bottom">
                 <p>Doe mee aan de fotowedstrijd (ik verloot elke maand een weekendje weg) of laat gewoon een leuk berichtje achter!</p>
-
-
             </div>
-
         </div>
-
     )
 }
 

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Location.css";
 
-
 function Location ({ locationName, image1, image2, image3, description }) {
     return (
         <div className='location'>

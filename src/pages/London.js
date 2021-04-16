@@ -1,8 +1,5 @@
-//import React from "react";
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import Location from "../components/Location"
 import BookingApplicationForm from "../components/BookingApplicationForm";
 import Sidebar from "../components/Sidebar";
@@ -12,7 +9,6 @@ const apiKey ='620c29ea8666e616e5cd46cb0d2acdf4';
 function London() {
     const [weatherDataLondonTemp, setWeatherDataLondonTemp] = useState([]);
 
-    //London temp
     useEffect(() => {
         async function getLocationsLondonTemp() {
             try {
@@ -42,9 +38,8 @@ function London() {
                 image3="https://st.hzcdn.com/simgs/pictures/bedrooms/contemporary-apartment-camden-paul-warren-design-img~c3c1697507b9f00d_9-6447-1-e393a79.jpg"
             />
             <BookingApplicationForm />
-
         </div>
-    )
+    );
 
 
 }

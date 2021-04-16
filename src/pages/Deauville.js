@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import Location from "../components/Location";
 import BookingApplicationForm from "../components/BookingApplicationForm";
-
 import Sidebar from "../components/Sidebar";
 
 const apiKey ='620c29ea8666e616e5cd46cb0d2acdf4';
 
 function Deauville() {
+
     const [weatherDataDeauvilleTemp, setWeatherDataDeauvilleTemp] = useState([]);
 
     //Deauville temp
@@ -25,7 +24,6 @@ function Deauville() {
         getLocationsDeauvilleTemp();
     },[]);
 
-
     return(
         <div className='feed'>
             <p><strong>Actuele luchtdruk ter plaatse:</strong> {weatherDataDeauvilleTemp.pressure} Pa</p>
@@ -41,10 +39,8 @@ function Deauville() {
                 image3="https://images1.apartments.com/i2/61E14xOWD_pJhLVatAUL5PbORLY19nuLuni1UtRo6-s/117/deauville-prairie-village-ks-building-photo.jpg"
             />
             <BookingApplicationForm />
-
-
         </div>
-    )
+    );
 }
 
 export default Deauville;

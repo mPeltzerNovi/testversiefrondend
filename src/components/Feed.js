@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import "./components/Feed.css";
-import StoryReel from "./components/StoryReel";
-import MessageSender from "./components/MessageSender";
-import Post from "./components/Post";
+import "./Feed.css";
+import StoryReel from "./StoryReel";
+import MessageSender from "./MessageSender";
+import Post from "./Post";
 
-import db from "./firebase";
+import db from "../firebase";
 
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./Sidebar";
 
 function Feed() {
-    //Hier haal je de boel eruit
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -19,7 +18,6 @@ function Feed() {
                 setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
             );
     }, []);
-    /////////////////////////////////////
 
     return (
         <div className='feed'>

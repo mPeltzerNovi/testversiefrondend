@@ -1,19 +1,17 @@
-//import React from "react";
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import Location from "../components/Location";
 import BookingApplicationForm from "../components/BookingApplicationForm";
-import Navigation from "../components/Sidebar";
 import Sidebar from "../components/Sidebar";
+
+;
+
 
 const apiKey ='620c29ea8666e616e5cd46cb0d2acdf4';
 
 function Hattem() {
     const [weatherDataHattemTemp, setWeatherDataHattemTemp] = useState([]);
 
-    //Hattem temp
     useEffect(() => {
         async function getLocationsHattemTemp() {
             try {
@@ -44,10 +42,8 @@ function Hattem() {
                 image3="https://i.pinimg.com/originals/59/b7/51/59b7515efeed33f43281a7e330ae2716.jpg"
             />
             <BookingApplicationForm />
-
         </div>
-    )
-
+    );
 }
 
 export default Hattem;

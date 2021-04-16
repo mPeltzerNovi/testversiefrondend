@@ -8,14 +8,12 @@ import SignUp from './pages/SignUp';
 import './App.css';
 import { useAuthState } from "./context/AuthContext";
 
-import Feed from "./Feed";
+import Feed from "./components/Feed";
 import Durbuy from "./pages/Durbuy";
-import London from "./pages/London"; //geimporteerd door er op te klikken beneden.
+import London from "./pages/London";
 import Garmisch from "./pages/Garmisch";
 import Deauville from "./pages/Deauville";
 import Hattem from "./pages/Hattem";
-
-//die import Redirect from 'react-router-dom' , daar ging het mis. moest je nog toevoegen
 
 function App() {
     const { isAuthenticated } = useAuthState();
@@ -28,15 +26,12 @@ function App() {
                     <Route exact path="/">
                         <Home />
                     </Route>
-                    {/*Als je geen specifieke private route maakt, kan je hem ook zo opslaan (zie react les8)*/}
+
                     <Route path="/profile">
                         <div className="app_body">
-                               {/*Hier stond de <sidebar /> voor ik heb in de feed onder de storyreel zette*/}
                             <Feed />
-                            {/*zoals dit maken om de sidebar op elke page huisjes te krijgen*/}
-
                         </div>
-                        {/*waarschijnlijk leer ik later hoe je deze hieronder weer onder de volgende components zet.*/}
+
                         <div>
                             {isAuthenticated ? <Profile /> : <Redirect to="/signin" />}
                         </div>
@@ -52,7 +47,6 @@ function App() {
                         <Durbuy />
                     </Route>
                     <Route path="/London">
-                        {/* het staat er boven, dat is prima, classname geven en dat stylen*/}
                         <London />
                     </Route>
                     <Route path="/Garmisch">
@@ -64,7 +58,6 @@ function App() {
                     <Route path="/Hattem">
                         <Hattem />
                     </Route>
-
                 </Switch>
             </div>
         </>
