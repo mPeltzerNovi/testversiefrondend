@@ -5,7 +5,7 @@ import {Avatar} from "@material-ui/core";
 
 
 //posten in firebase mogelijk maken
-import db from "./firebase";
+import db from "../firebase";
 import firebase from "firebase";
 
 

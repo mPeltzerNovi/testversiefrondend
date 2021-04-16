@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./BookingApplicationForm.css";
-import {AuthContext, useAuthState} from "./context/AuthContext";
+import {AuthContext, useAuthState} from "../context/AuthContext";
 import { Link, useHistory } from 'react-router-dom';
 
 

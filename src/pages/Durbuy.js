@@ -5,9 +5,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-import Location from "../Location";
-import BookingApplicationForm from "../BookingApplicationForm";
-import Sidebar from "../Sidebar";
+import Location from "../components/Location";
+import BookingApplicationForm from "../components/BookingApplicationForm";
+
+import Sidebar from "../components/Sidebar";
 
 //ad2
 const apiKey ='620c29ea8666e616e5cd46cb0d2acdf4';
@@ -73,4 +74,4 @@ function Durbuy(){
     )
 }
 
-export default Durbuy
+export default Durbuy;

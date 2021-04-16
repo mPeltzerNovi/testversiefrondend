@@ -7,14 +7,14 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import './App.css';
 import { useAuthState } from "./context/AuthContext";
-import Sidebar from "./Sidebar";
+
 import Feed from "./Feed";
 import Durbuy from "./pages/Durbuy";
 import London from "./pages/London"; //geimporteerd door er op te klikken beneden.
 import Garmisch from "./pages/Garmisch";
 import Deauville from "./pages/Deauville";
 import Hattem from "./pages/Hattem";
-import StoryReel from "./StoryReel";
+
 //die import Redirect from 'react-router-dom' , daar ging het mis. moest je nog toevoegen
 
 function App() {

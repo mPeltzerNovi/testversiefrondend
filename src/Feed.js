@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import "./Feed.css";
-import StoryReel from "./StoryReel";
-import MessageSender from "./MessageSender";
-import Post from "./Post";
+import "./components/Feed.css";
+import StoryReel from "./components/StoryReel";
+import MessageSender from "./components/MessageSender";
+import Post from "./components/Post";
 
 import db from "./firebase";
-import Sidebar from "./Sidebar";
+
+import Sidebar from "./components/Sidebar";
 
 function Feed() {
     //Hier haal je de boel eruit

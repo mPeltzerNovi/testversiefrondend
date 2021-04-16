@@ -73,7 +73,8 @@ function Header() {
         setBase64Avatar(base64);
 
         try {
-            const response = await axios.post(`http://localhost:8080/residences`, {
+            //Nog een keer veranderd naar "avatars (zie onder)".
+            const response = await axios.post(`http://localhost:8080/avatars`, {
                 firstName: firstName,
                 lastName: lastName,
                 clientText: clientText,
@@ -105,7 +106,8 @@ function Header() {
     useEffect(() =>{
         const token = localStorage.getItem('token');
         async function getAvatar() {
-            const response = await axios.get(`http://localhost:8080/residences`, { headers: {
+            //Hier veranderd naar "avatars"
+            const response = await axios.get(`http://localhost:8080/avatars`, { headers: {
                     "Content-Type" : "application/json",
                     Authorization: `Bearer ${token}`,
                 }})
