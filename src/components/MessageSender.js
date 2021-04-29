@@ -35,12 +35,12 @@ function MessageSender() {
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         className="messageSender_input"
-                        placeholder={`What's on your mind?`}
+                        placeholder={`Doe mee met de fotowedstrijd of laat een leuk berichtje achter!`}
                     />
                     <input
                         value={imageUrl}
                         onChange={(e) => setImageUrl(e.target.value)}
-                        placeholder="image URL (Optional)" />
+                        placeholder="foto URL (Optioneel)" />
 
                     <button onClick={handleSubmit} type="submit">
                         Hidden submit

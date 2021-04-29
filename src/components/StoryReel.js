@@ -16,7 +16,7 @@ function StoryReel() {
 
                 <Story
                     image="https://images.trvl-media.com/media/content/shared/images/travelguides/destination/2114/London-City-Hall-167154.jpg"
-                    profileSrc="https://s1.thcdn.com/productimg/600/600/11319445-1134415917821882.jpg"
+
                     title="Verenigd Koninkrijk"
                 />
 

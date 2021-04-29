@@ -2,13 +2,13 @@ import firebase from "firebase";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAqgEqfF5sz4McwUmBKG7oJqdw347ylBSU",
-    authDomain: "additional-database.firebaseapp.com",
-    projectId: "additional-database",
-    storageBucket: "additional-database.appspot.com",
-    messagingSenderId: "839418379434",
-    appId: "1:839418379434:web:dd585f82ed94337de1e4d3",
-    measurementId: "G-ZQW86K8CCG"
+    apiKey: "AIzaSyCe_m5lDWb8efYy6oO3dxihrDIJHg5Wy7Y",
+    authDomain: "messagesender-56cd4.firebaseapp.com",
+    projectId: "messagesender-56cd4",
+    storageBucket: "messagesender-56cd4.appspot.com",
+    messagingSenderId: "793772570877",
+    appId: "1:793772570877:web:65d172b4d680140b9a6694",
+    measurementId: "G-2WGF1KGSEC"
 };
 
 //connect react frondend to firebase backend:
