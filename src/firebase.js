@@ -12,7 +12,7 @@ import firebase from "firebase";
 };*/
 
 //Nieuwe firebase-database ivm verlopen eerste database eind mei
-const firebaseConfig = {
+/*const firebaseConfig = {
     apiKey: "AIzaSyAxHRcEUcm_OszbrRibJXzkv9RW51YywYw",
     authDomain: "judith-ac214.firebaseapp.com",
     projectId: "judith-ac214",
@@ -20,6 +20,17 @@ const firebaseConfig = {
     messagingSenderId: "431388111925",
     appId: "1:431388111925:web:8d938c8937737da1176d7c",
     measurementId: "G-1VFTJJV58J"
+};*/
+
+//Nieuwe firebase-database (project: "juli-2021") aangemaakt in zelfde firebase account 28-6-21
+const firebaseConfig = {
+    apiKey: "AIzaSyBonx1rQkYtS5JtQYuz34GIxqM8IHSvRKE",
+    authDomain: "juli-2021.firebaseapp.com",
+    projectId: "juli-2021",
+    storageBucket: "juli-2021.appspot.com",
+    messagingSenderId: "920320637044",
+    appId: "1:920320637044:web:b40493512df8dab449b921",
+    measurementId: "G-7721PNNZ0T"
 };
 
 //connect react frondend to firebase backend:
